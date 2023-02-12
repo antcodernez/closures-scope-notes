@@ -30,13 +30,72 @@ function contador (i)
         function aumentar ()
             {
                 console.log(acumulador);
-                acumulador = acumulador + 1;
+                acumulador = acumulador + i;
             }
         return aumentar()
     }
-
-for (i = 0; i < 4; i++)
-    {
-        contador(i);
-    }
+    
 const closure = contador(2);
+closure();
+closure();
+ // sumará dos cada vez que se ejecute (Solo corre en el navegador)
+
+ // Sumar dos numeros
+
+function sumWithClosure(firstNum) 
+    {
+        let a = firstNum; 
+        return function (secondNum)
+        {   
+            let b = secondNum;
+            if (!b)
+            {
+                return a;    
+            }
+            else 
+            {
+                return a + b;    
+            }  
+        }
+  }
+sumWithClosure(2)(4);
+// puede haber dos parametros para una funcion interna alv :O
+
+// otra manera de hacerlo
+
+function sumWithClosure(firstNum) 
+    {
+        return function xd(secNum) 
+        {
+            return firstNum + (secNum ?? 0);
+        }
+    }
+  
+sumWithClosure(2)(3);
+// multiplicación de dos numeros con closures
+
+function multiplicacionClosure(num1)
+    {
+        return function multi(num2)
+            {
+                if (!num2)
+                {
+                    return "Ingresa el segundo valor xd";
+                }
+                else 
+                {
+                    return num1 * num2;
+                }
+            }
+    }
+
+function laPerra(num1)
+    {
+        return function(num2) 
+            {
+                return num1 * (!num2 ? "xd": num2);
+            }
+    }   
+
+// perimetro y area con closure (es mío)
+
