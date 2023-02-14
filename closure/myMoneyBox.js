@@ -40,10 +40,10 @@ function createPetList()
         {
             return petsList;
         }
-        else 
-            {
-                return petsList.push(pet);
-            }
+         else 
+        {
+             return petsList.push(pet);
+        }
     }
 }
 
